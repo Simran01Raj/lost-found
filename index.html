@@ -5,86 +5,79 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html, body { 
-            height: 100vh; 
+            height: 100vh !important; 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             /* BABY PINK PASTEL THEME */
-            background: linear-gradient(135deg, #ffb3d9 0%, #f8b8d1 50%, #ffd1e6 100%);
+            background: linear-gradient(135deg, #ffb3d9 0%, #f8b8d1 50%, #ffd1e6 100%) !important;
             padding: 20px;
         }
         .container { max-width: 1200px; margin: auto; }
         
-        /* PASTEL PINK GRADIENT HEADER */
+        /* PASTEL PINK HEADER */
         .header-box {
-            background: linear-gradient(135deg, rgba(255,182,217,0.95), rgba(255,209,230,0.95), rgba(248,184,209,0.9));
+            background: linear-gradient(135deg, rgba(255,179,217,0.98), rgba(255,209,230,0.98)) !important;
             padding: 40px 20px; border-radius: 25px; margin-bottom: 40px;
-            box-shadow: 0 25px 50px rgba(255,182,217,0.3); backdrop-filter: blur(15px);
+            box-shadow: 0 25px 50px rgba(255,179,217,0.4) !important; 
+            backdrop-filter: blur(15px);
             text-align: center;
         }
-        .header-box h1 { font-size: 2.8em; color: #ff6b9d; margin-bottom: 10px; font-weight: 700; }
-        .header-box p { color: rgba(255,107,157,0.9); font-size: 1.2em; }
+        .header-box h1 { font-size: 2.8em; color: #ff1493 !important; margin-bottom: 10px; font-weight: 700; }
+        .header-box p { color: #ff69b4 !important; font-size: 1.2em; }
         
-        /* Sections */
         .section { 
-            background: rgba(255,255,255,0.97); margin: 20px 0; padding: 30px; 
-            border-radius: 25px; box-shadow: 0 20px 40px rgba(255,182,217,0.2);
+            background: rgba(255,255,255,0.98) !important; 
+            margin: 20px 0; padding: 30px; border-radius: 25px; 
+            box-shadow: 0 20px 40px rgba(255,179,217,0.3) !important;
         }
-        .section h2, .items-section h2 { color: #ff6b9d; text-align: center; margin-bottom: 20px; }
+        .section h2, .items-section h2 { color: #ff1493 !important; text-align: center; margin-bottom: 20px; }
         
-        /* Form & Inputs */
         input, textarea, select, button { 
-            width: 100%; margin: 10px 0; padding: 15px; 
-            border: 2px solid #ffd1e6; border-radius: 15px; font-size: 16px; 
-            transition: all 0.3s; background: #fff5fa;
+            width: 100%; margin: 10px 0; padding: 15px; border: 2px solid #ffd1e6 !important; 
+            border-radius: 15px; font-size: 16px; transition: all 0.3s;
+            background: #fff5fa !important;
         }
         input:focus, textarea:focus, select:focus { 
-            outline: none; border-color: #ff85c0; 
-            box-shadow: 0 0 0 4px rgba(255,137,192,0.2);
+            outline: none; border-color: #ff69b4 !important; 
+            box-shadow: 0 0 0 4px rgba(255,105,180,0.3) !important;
         }
         button { 
-            background: linear-gradient(135deg, #ff85c0 0%, #ffb3d9 100%);
-            color: white; border: none; font-weight: 600; cursor: pointer; 
+            background: linear-gradient(135deg, #ff69b4 0%, #ffb3d9 100%) !important;
+            color: white !important; border: none; font-weight: 600; cursor: pointer; 
             transition: all 0.3s; border-radius: 15px;
         }
-        button:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(255,133,192,0.4); }
+        button:hover { 
+            transform: translateY(-2px); 
+            box-shadow: 0 12px 30px rgba(255,105,180,0.5) !important; 
+        }
         
-        /* Search Box */
         #search { 
             max-width: 500px; margin: 0 auto 20px; display: block;
-            border: 2px solid #ffd1e6; border-radius: 30px; padding: 15px 25px;
-            background: #fff5fa; box-shadow: 0 8px 25px rgba(255,182,217,0.2);
-            font-size: 16px;
+            border: 2px solid #ffd1e6 !important; border-radius: 30px; padding: 15px 25px;
+            background: #fff5fa !important; box-shadow: 0 8px 25px rgba(255,179,217,0.3) !important;
         }
         
-        /* Items Grid */
-        .items-grid { 
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
-            gap: 25px; margin-top: 20px; 
-        }
+        .items-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; margin-top: 20px; }
         .card { 
-            background: linear-gradient(145deg, #fff5fa, #ffffff); 
+            background: linear-gradient(145deg, #fff5fa, #ffffff) !important; 
             border-radius: 25px; padding: 25px; 
-            box-shadow: 0 15px 40px rgba(255,182,217,0.25); 
-            transition: all 0.3s; border: 1px solid #ffeef5;
+            box-shadow: 0 15px 40px rgba(255,179,217,0.3) !important; 
+            transition: all 0.3s; border: 1px solid #ffeef5 !important;
         }
-        .card:hover { transform: translateY(-8px); box-shadow: 0 30px 60px rgba(255,182,217,0.35); }
+        .card:hover { transform: translateY(-8px); box-shadow: 0 30px 60px rgba(255,179,217,0.4) !important; }
         .card img { width: 100%; height: 160px; object-fit: cover; border-radius: 15px; }
-        .lost { border-left: 6px solid #ff9aaf; }
-        .found { border-left: 6px solid #ffbac8; }
+        .lost { border-left: 6px solid #ff69b4 !important; }
+        .found { border-left: 6px solid #ffb3d9 !important; }
         .claim-btn { width: 100%; margin-top: 15px; padding: 14px; border-radius: 15px; }
-        .claim-btn:hover { transform: translateY(-3px); }
-        
-        h3 { color: #ff6b9d; margin-bottom: 10px; }
+        h3 { color: #ff1493 !important; margin-bottom: 10px; }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- BABY PINK GRADIENT HEADER -->
         <div class="header-box">
             <h1>🌸 Lost & Found Portal</h1>
             <p>Report & recover campus items instantly</p>
         </div>
         
-        <!-- Report Form -->
         <div class="section">
             <h2>📝 Report Item</h2>
             <form id="reportForm">
@@ -99,7 +92,6 @@
             </form>
         </div>
 
-        <!-- Search & Items -->
         <div class="section items-section">
             <h2>🔎 Search Items</h2>
             <input type="text" id="search" placeholder="Search keys, laptop, water bottle...">
@@ -109,10 +101,10 @@
 
     <script>
 let items = [
-    {id:1, name:"Black Keys", desc:"Lost near Hostel A gate yesterday", type:"lost", image:"https://via.placeholder.com/280x150/ff9aaf/fff?text=Keys"},
-    {id:2, name:"Blue Water Bottle", desc:"Found in Library 2nd floor", type:"found", image:"https://via.placeholder.com/280x150/ffbac8/fff?text=Bottle"},
-    {id:3, name:"Sony Earphones", desc:"Lost in Canteen during lunch", type:"lost", image:"https://via.placeholder.com/280x150/ff9aaf/fff?text=Earphones"},
-    {id:4, name:"ID Card", desc:"Found near Basketball Court", type:"found", image:"https://via.placeholder.com/280x150/ffbac8/fff?text=ID+Card"}
+    {id:1, name:"Black Keys", desc:"Lost near Hostel A gate yesterday", type:"lost", image:"https://via.placeholder.com/280x150/ff69b4/fff?text=Keys"},
+    {id:2, name:"Blue Water Bottle", desc:"Found in Library 2nd floor", type:"found", image:"https://via.placeholder.com/280x150/ffb3d9/fff?text=Bottle"},
+    {id:3, name:"Sony Earphones", desc:"Lost in Canteen during lunch", type:"lost", image:"https://via.placeholder.com/280x150/ff69b4/fff?text=Earphones"},
+    {id:4, name:"ID Card", desc:"Found near Basketball Court", type:"found", image:"https://via.placeholder.com/280x150/ffb3d9/fff?text=ID+Card"}
 ];
 
 function displayItems(filteredItems) {
@@ -122,7 +114,7 @@ function displayItems(filteredItems) {
             <img src="${item.image}" alt="${item.name}">
             <h3>${item.name}</h3>
             <p>${item.desc}</p>
-            <span style="font-weight:bold; color:${item.type==='lost'?'#ff6b9d':'#ffbac8'}">
+            <span style="font-weight:bold; color:${item.type==='lost'?'#ff1493':'#ffb3d9'}">
                 ${item.type==='lost'?'❌ LOST':'✅ FOUND'}
             </span>
             <br>
@@ -137,7 +129,7 @@ document.getElementById('itemsList').addEventListener('click', function(e) {
         const item = items.find(i => i.id == itemId);
         alert(`🎉 "${item.name}" CLAIMED! \n📞 Contact: +91-98765-43210 (Demo)\n📍 Location: ${item.desc}`);
         e.target.textContent = '✅ Claimed!';
-        e.target.style.background = '#ffbac8';
+        e.target.style.background = '#ffb3d9';
         e.target.disabled = true;
     }
 });
@@ -160,7 +152,7 @@ document.getElementById('reportForm').addEventListener('submit', (e) => {
     const newItem = {
         id: Date.now(),
         name, desc, type,
-        image: "https://via.placeholder.com/280x150/" + (type==='lost'?'ff9aaf':'ffbac8') + "/fff?text=" + encodeURIComponent(name)
+        image: "https://via.placeholder.com/280x150/" + (type==='lost'?'ff69b4':'ffb3d9') + "/fff?text=" + encodeURIComponent(name)
     };
     
     items.unshift(newItem);
