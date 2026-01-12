@@ -3,73 +3,127 @@
 <head>
     <title>Lost & Found - Campus Portal</title>
     <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html, body { 
-    height: 100vh !important; 
-    margin: 0 !important;
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Page background */
+html, body {
+    min-height: 100vh;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-    padding: 20px;
 }
-.container { max-width: 1200px; margin: 0 auto; }
 
-.header { 
-    text-align: center; padding: 30px 0; color: white;
-    background: rgba(255,255,255,0.1); backdrop-filter: blur(10px);
-    border-radius: 20px; margin-bottom: 30px;
+body {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    padding: 30px;
 }
-.header h1 { font-size: 2.5em; margin-bottom: 10px; }
-.header p { font-size: 1.2em; opacity: 0.9; }
 
-.report-section { 
-    background: white; border-radius: 20px; padding: 30px; 
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1); margin-bottom: 30px;
+/* Main container */
+.container {
+    max-width: 900px;
+    margin: auto;
 }
-.report-section h2 { color: #333; margin-bottom: 20px; text-align: center; }
-.form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-input, select, textarea { 
-    width: 100%; padding: 15px; border: 2px solid #e1e5e9; 
-    border-radius: 12px; font-size: 16px; transition: all 0.3s;
-}
-input:focus, select:focus, textarea:focus { 
-    outline: none; border-color: #667eea; box-shadow: 0 0 0 3px rgba(102,126,234,0.1);
-}
-.btn { 
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white; border: none; padding: 15px 30px; 
-    border-radius: 12px; font-size: 16px; cursor: pointer;
-    transition: transform 0.3s; width: 100%; font-weight: 600;
-}
-.btn:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(102,126,234,0.4); }
 
-.items-section h2 { color: white; text-align: center; margin-bottom: 20px; }
-.search-box { 
-    width: 100%; max-width: 500px; margin: 0 auto 30px; display: block;
-    padding: 15px; border: none; border-radius: 12px; font-size: 16px;
-    background: white; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+/* Header */
+.header {
+    text-align: center;
+    padding: 30px;
+    color: white;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    margin-bottom: 30px;
 }
-.items-grid { 
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+
+.header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+/* White card */
+.report-section {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    margin-bottom: 30px;
+}
+
+/* Section heading */
+.report-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Form grid */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
 }
-.item-card { 
-    background: white; border-radius: 20px; padding: 20px; 
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.3s;
-}
-.item-card:hover { transform: translateY(-5px); box-shadow: 0 25px 50px rgba(0,0,0,0.15); }
-.item-image { width: 100%; height: 200px; background: #f8f9fa; border-radius: 12px; margin-bottom: 15px; }
-.item-title { font-size: 1.4em; color: #333; margin-bottom: 10px; }
-.item-meta { color: #666; font-size: 0.9em; margin-bottom: 15px; }
-.item-status { 
-    display: inline-block; padding: 5px 15px; border-radius: 20px; 
-    font-size: 0.85em; font-weight: 600; margin-bottom: 15px;
-}
-.status-lost { background: #ffebee; color: #c62828; }
-.status-found { background: #e8f5e8; color: #2e7d32; }
-.status-claimed { background: #fff3e0; color: #f57c00; }
-.claim-btn.claimed { background: #ccc; cursor: not-allowed; }
-</style>
 
+/* Inputs */
+input, select, textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 12px;
+    border: 2px solid #e5e7eb;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+/* Focus effect */
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102,126,234,0.2);
+}
+
+/* Submit button */
+button {
+    width: 100%;
+    padding: 15px;
+    border-radius: 12px;
+    border: none;
+    background: #22c55e;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #16a34a;
+}
+
+/* Search section */
+.search-section {
+    background: rgba(255,255,255,0.9);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+/* Mobile friendly */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    .header h1 {
+        font-size: 2em;
+    }
+}
+</style>
 </head>
 <body>
     <h1>🔍 Lost & Found Portal</h1>
@@ -170,6 +224,7 @@ displayItems(items);
 </script>
 </body>
 </html>
+
 
 
 
