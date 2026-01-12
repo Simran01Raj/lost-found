@@ -7,73 +7,80 @@
         html, body { 
             height: 100vh; 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            /* BABY PINK PASTEL THEME */
+            background: linear-gradient(135deg, #ffb3d9 0%, #f8b8d1 50%, #ffd1e6 100%);
             padding: 20px;
         }
         .container { max-width: 1200px; margin: auto; }
         
-        /* Gradient Header */
+        /* PASTEL PINK GRADIENT HEADER */
         .header-box {
-            background: linear-gradient(135deg, rgba(102,126,234,0.95), rgba(118,75,162,0.95));
+            background: linear-gradient(135deg, rgba(255,182,217,0.95), rgba(255,209,230,0.95), rgba(248,184,209,0.9));
             padding: 40px 20px; border-radius: 25px; margin-bottom: 40px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.2); backdrop-filter: blur(15px);
+            box-shadow: 0 25px 50px rgba(255,182,217,0.3); backdrop-filter: blur(15px);
             text-align: center;
         }
-        .header-box h1 { font-size: 2.8em; color: white; margin-bottom: 10px; font-weight: 700; }
-        .header-box p { color: rgba(255,255,255,0.9); font-size: 1.2em; }
+        .header-box h1 { font-size: 2.8em; color: #ff6b9d; margin-bottom: 10px; font-weight: 700; }
+        .header-box p { color: rgba(255,107,157,0.9); font-size: 1.2em; }
         
         /* Sections */
         .section { 
-            background: rgba(255,255,255,0.95); margin: 20px 0; padding: 30px; 
-            border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            background: rgba(255,255,255,0.97); margin: 20px 0; padding: 30px; 
+            border-radius: 25px; box-shadow: 0 20px 40px rgba(255,182,217,0.2);
         }
-        .section h2, .items-section h2 { color: #333; text-align: center; margin-bottom: 20px; }
+        .section h2, .items-section h2 { color: #ff6b9d; text-align: center; margin-bottom: 20px; }
         
         /* Form & Inputs */
         input, textarea, select, button { 
             width: 100%; margin: 10px 0; padding: 15px; 
-            border: 2px solid #e1e5e9; border-radius: 12px; font-size: 16px; 
-            transition: all 0.3s;
+            border: 2px solid #ffd1e6; border-radius: 15px; font-size: 16px; 
+            transition: all 0.3s; background: #fff5fa;
         }
         input:focus, textarea:focus, select:focus { 
-            outline: none; border-color: #667eea; 
-            box-shadow: 0 0 0 3px rgba(102,126,234,0.1);
+            outline: none; border-color: #ff85c0; 
+            box-shadow: 0 0 0 4px rgba(255,137,192,0.2);
         }
         button { 
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #ff85c0 0%, #ffb3d9 100%);
             color: white; border: none; font-weight: 600; cursor: pointer; 
-            transition: all 0.3s;
+            transition: all 0.3s; border-radius: 15px;
         }
-        button:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(102,126,234,0.4); }
+        button:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(255,133,192,0.4); }
         
         /* Search Box */
         #search { 
             max-width: 500px; margin: 0 auto 20px; display: block;
-            border: 2px solid #ddd; border-radius: 25px; padding: 15px 20px;
-            background: white; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 2px solid #ffd1e6; border-radius: 30px; padding: 15px 25px;
+            background: #fff5fa; box-shadow: 0 8px 25px rgba(255,182,217,0.2);
+            font-size: 16px;
         }
         
         /* Items Grid */
         .items-grid { 
             display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
-            gap: 20px; margin-top: 20px; 
+            gap: 25px; margin-top: 20px; 
         }
         .card { 
-            background: white; border-radius: 20px; padding: 20px; 
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.3s;
+            background: linear-gradient(145deg, #fff5fa, #ffffff); 
+            border-radius: 25px; padding: 25px; 
+            box-shadow: 0 15px 40px rgba(255,182,217,0.25); 
+            transition: all 0.3s; border: 1px solid #ffeef5;
         }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 25px 50px rgba(0,0,0,0.15); }
-        .card img { width: 100%; height: 150px; object-fit: cover; border-radius: 12px; }
-        .lost { border-left: 5px solid #f44336; }
-        .found { border-left: 5px solid #4CAF50; }
-        .claim-btn { width: 100%; margin-top: 10px; padding: 12px; }
+        .card:hover { transform: translateY(-8px); box-shadow: 0 30px 60px rgba(255,182,217,0.35); }
+        .card img { width: 100%; height: 160px; object-fit: cover; border-radius: 15px; }
+        .lost { border-left: 6px solid #ff9aaf; }
+        .found { border-left: 6px solid #ffbac8; }
+        .claim-btn { width: 100%; margin-top: 15px; padding: 14px; border-radius: 15px; }
+        .claim-btn:hover { transform: translateY(-3px); }
+        
+        h3 { color: #ff6b9d; margin-bottom: 10px; }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Gradient Header -->
+        <!-- BABY PINK GRADIENT HEADER -->
         <div class="header-box">
-            <h1>🔍 Lost & Found Portal</h1>
+            <h1>🌸 Lost & Found Portal</h1>
             <p>Report & recover campus items instantly</p>
         </div>
         
@@ -102,10 +109,10 @@
 
     <script>
 let items = [
-    {id:1, name:"Black Keys", desc:"Lost near Hostel A gate yesterday", type:"lost", image:"https://via.placeholder.com/280x150/f44336/ffffff?text=Keys"},
-    {id:2, name:"Blue Water Bottle", desc:"Found in Library 2nd floor", type:"found", image:"https://via.placeholder.com/280x150/4CAF50/ffffff?text=Bottle"},
-    {id:3, name:"Sony Earphones", desc:"Lost in Canteen during lunch", type:"lost", image:"https://via.placeholder.com/280x150/f44336/ffffff?text=Earphones"},
-    {id:4, name:"ID Card", desc:"Found near Basketball Court", type:"found", image:"https://via.placeholder.com/280x150/4CAF50/ffffff?text=ID+Card"}
+    {id:1, name:"Black Keys", desc:"Lost near Hostel A gate yesterday", type:"lost", image:"https://via.placeholder.com/280x150/ff9aaf/fff?text=Keys"},
+    {id:2, name:"Blue Water Bottle", desc:"Found in Library 2nd floor", type:"found", image:"https://via.placeholder.com/280x150/ffbac8/fff?text=Bottle"},
+    {id:3, name:"Sony Earphones", desc:"Lost in Canteen during lunch", type:"lost", image:"https://via.placeholder.com/280x150/ff9aaf/fff?text=Earphones"},
+    {id:4, name:"ID Card", desc:"Found near Basketball Court", type:"found", image:"https://via.placeholder.com/280x150/ffbac8/fff?text=ID+Card"}
 ];
 
 function displayItems(filteredItems) {
@@ -115,7 +122,7 @@ function displayItems(filteredItems) {
             <img src="${item.image}" alt="${item.name}">
             <h3>${item.name}</h3>
             <p>${item.desc}</p>
-            <span style="font-weight:bold; color:${item.type==='lost'?'#f44336':'#4CAF50'}">
+            <span style="font-weight:bold; color:${item.type==='lost'?'#ff6b9d':'#ffbac8'}">
                 ${item.type==='lost'?'❌ LOST':'✅ FOUND'}
             </span>
             <br>
@@ -124,21 +131,17 @@ function displayItems(filteredItems) {
     `).join('');
 }
 
-// Claim functionality
 document.getElementById('itemsList').addEventListener('click', function(e) {
     if (e.target.classList.contains('claim-btn')) {
         const itemId = e.target.getAttribute('data-id');
         const item = items.find(i => i.id == itemId);
-        alert(`🎉 "${item.name}" CLAIMED! 
-📞 Contact: +91-98765-43210 (Demo)
-📍 Location: ${item.desc}`);
+        alert(`🎉 "${item.name}" CLAIMED! \n📞 Contact: +91-98765-43210 (Demo)\n📍 Location: ${item.desc}`);
         e.target.textContent = '✅ Claimed!';
-        e.target.style.background = '#28a745';
+        e.target.style.background = '#ffbac8';
         e.target.disabled = true;
     }
 });
 
-// Search functionality
 document.getElementById('search').addEventListener('input', (e) => {
     const query = e.target.value.toLowerCase();
     const filtered = items.filter(item => 
@@ -148,7 +151,6 @@ document.getElementById('search').addEventListener('input', (e) => {
     displayItems(filtered);
 });
 
-// Form submit
 document.getElementById('reportForm').addEventListener('submit', (e) => {
     e.preventDefault();
     const name = document.getElementById('itemName').value;
@@ -158,7 +160,7 @@ document.getElementById('reportForm').addEventListener('submit', (e) => {
     const newItem = {
         id: Date.now(),
         name, desc, type,
-        image: "https://via.placeholder.com/280x150/" + (type==='lost'?'f44336':'4CAF50') + "/ffffff?text=" + encodeURIComponent(name)
+        image: "https://via.placeholder.com/280x150/" + (type==='lost'?'ff9aaf':'ffbac8') + "/fff?text=" + encodeURIComponent(name)
     };
     
     items.unshift(newItem);
@@ -167,7 +169,6 @@ document.getElementById('reportForm').addEventListener('submit', (e) => {
     alert('✅ Item reported successfully!');
 });
 
-// Initial load
 displayItems(items);
     </script>
 </body>
