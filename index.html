@@ -8,21 +8,18 @@
         html, body { 
             height: 100vh !important; 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            /* PASTEL BLUE + PINK + WHITE THEME */
             background: linear-gradient(135deg, #e6f2ff 0%, #fce7f3 50%, #ffffff 100%) !important;
             padding: 20px;
         }
 
         .container { max-width: 1200px; margin: auto; }
 
-        /* HEADER */
         .header-box {
             background: linear-gradient(135deg, rgba(230,242,255,0.98), rgba(252,231,243,0.98)) !important;
             padding: 40px 20px;
             border-radius: 25px;
             margin-bottom: 40px;
             box-shadow: 0 25px 50px rgba(173,216,230,0.4) !important;
-            backdrop-filter: blur(15px);
             text-align: center;
         }
 
@@ -30,7 +27,6 @@
             font-size: 2.8em;
             color: #5fa8d3 !important;
             margin-bottom: 10px;
-            font-weight: 700;
         }
 
         .header-box p {
@@ -46,7 +42,7 @@
             box-shadow: 0 20px 40px rgba(173,216,230,0.3) !important;
         }
 
-        .section h2, .items-section h2 {
+        .section h2 {
             color: #5fa8d3 !important;
             text-align: center;
             margin-bottom: 20px;
@@ -58,62 +54,52 @@
             padding: 15px;
             border: 2px solid #cfe7ff !important;
             border-radius: 15px;
-            font-size: 16px;
-            transition: all 0.3s;
             background: #f8fbff !important;
         }
 
-        input:focus, textarea:focus, select:focus { 
+        input:focus, textarea:focus, select:focus {
             outline: none;
             border-color: #f3a6c8 !important;
-            box-shadow: 0 0 0 4px rgba(243,166,200,0.3) !important;
+            box-shadow: 0 0 0 4px rgba(243,166,200,0.3);
         }
 
-        button { 
+        button {
             background: linear-gradient(135deg, #a7c7e7 0%, #f3a6c8 100%) !important;
-            color: white !important;
+            color: white;
             border: none;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s;
-            border-radius: 15px;
         }
 
-        button:hover { 
+        button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 12px 30px rgba(167,199,231,0.5) !important;
+            box-shadow: 0 12px 30px rgba(167,199,231,0.5);
         }
 
-        #search { 
+        #search {
             max-width: 500px;
             margin: 0 auto 20px;
             display: block;
-            border: 2px solid #cfe7ff !important;
             border-radius: 30px;
             padding: 15px 25px;
-            background: #f8fbff !important;
-            box-shadow: 0 8px 25px rgba(173,216,230,0.3) !important;
         }
 
         .items-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 25px;
-            margin-top: 20px;
         }
 
-        .card { 
-            background: linear-gradient(145deg, #f8fbff, #ffffff) !important;
+        .card {
+            background: linear-gradient(145deg, #f8fbff, #ffffff);
             border-radius: 25px;
             padding: 25px;
-            box-shadow: 0 15px 40px rgba(173,216,230,0.3) !important;
-            transition: all 0.3s;
-            border: 1px solid #e6f2ff !important;
+            box-shadow: 0 15px 40px rgba(173,216,230,0.3);
+            transition: 0.3s;
         }
 
         .card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 30px 60px rgba(173,216,230,0.4) !important;
         }
 
         .card img {
@@ -123,20 +109,12 @@
             border-radius: 15px;
         }
 
-        .lost { border-left: 6px solid #f3a6c8 !important; }
-        .found { border-left: 6px solid #a7c7e7 !important; }
+        .lost { border-left: 6px solid #f3a6c8; }
+        .found { border-left: 6px solid #a7c7e7; }
 
-        .claim-btn {
-            width: 100%;
-            margin-top: 15px;
-            padding: 14px;
-            border-radius: 15px;
-        }
+        h3 { color: #5fa8d3; margin-bottom: 10px; }
 
-        h3 {
-            color: #5fa8d3 !important;
-            margin-bottom: 10px;
-        }
+        .claim-btn { margin-top: 15px; }
     </style>
 </head>
 
@@ -151,20 +129,20 @@
     <div class="section">
         <h2>📝 Report Item</h2>
         <form id="reportForm">
-            <input type="text" id="itemName" placeholder="Item name (e.g., Black Keys, Blue Pen)" required>
+            <input type="text" id="itemName" placeholder="Item name" required>
             <textarea id="description" placeholder="Description & location" required></textarea>
             <select id="type">
                 <option value="lost">❌ LOST</option>
                 <option value="found">✅ FOUND</option>
             </select>
-            <input type="file" id="photo" accept="image/*">
+            <input type="file">
             <button type="submit">🚀 Submit Report</button>
         </form>
     </div>
 
-    <div class="section items-section">
+    <div class="section">
         <h2>🔎 Search Items</h2>
-        <input type="text" id="search" placeholder="Search keys, laptop, water bottle...">
+        <input type="text" id="search" placeholder="Search items...">
         <div id="itemsList" class="items-grid"></div>
     </div>
 
@@ -178,33 +156,40 @@ let items = [
     {id:4, name:"ID Card", desc:"Found near Basketball Court", type:"found", image:"https://via.placeholder.com/280x150/a7c7e7/fff?text=ID+Card"}
 ];
 
-function displayItems(listData) {
-    const list = document.getElementById('itemsList');
-    list.innerHTML = listData.map(item => `
+function displayItems(list) {
+    document.getElementById('itemsList').innerHTML = list.map(item => `
         <div class="card ${item.type}">
             <img src="${item.image}">
             <h3>${item.name}</h3>
             <p>${item.desc}</p>
-            <span style="font-weight:bold; color:${item.type==='lost'?'#f3a6c8':'#5fa8d3'}">
-                ${item.type==='lost'?'❌ LOST':'✅ FOUND'}
-            </span><br>
+            <strong>${item.type === 'lost' ? '❌ LOST' : '✅ FOUND'}</strong><br>
             <button class="claim-btn" data-id="${item.id}">👆 Claim Item</button>
         </div>
     `).join('');
 }
 
-document.getElementById('itemsList').addEventListener('click', e => {
-    if(e.target.classList.contains('claim-btn')){
+document.getElementById('itemsList').addEventListener('click', function(e) {
+    if (e.target.classList.contains('claim-btn')) {
+        const itemId = e.target.dataset.id;
+        const item = items.find(i => i.id == itemId);
+
+        alert(
+            `🎉 "${item.name}" CLAIMED!\n\n` +
+            `📞 Contact: +91-98765-43210 (Demo)\n` +
+            `📍 Details: ${item.desc}`
+        );
+
         e.target.textContent = '✅ Claimed!';
-        e.target.style.background = '#cfe7ff';
         e.target.disabled = true;
+        e.target.style.background = '#cfe7ff';
     }
 });
 
 document.getElementById('search').addEventListener('input', e => {
     const q = e.target.value.toLowerCase();
     displayItems(items.filter(i =>
-        i.name.toLowerCase().includes(q) || i.desc.toLowerCase().includes(q)
+        i.name.toLowerCase().includes(q) ||
+        i.desc.toLowerCase().includes(q)
     ));
 });
 
@@ -217,7 +202,9 @@ document.getElementById('reportForm').addEventListener('submit', e => {
     items.unshift({
         id: Date.now(),
         name, desc, type,
-        image: "https://via.placeholder.com/280x150/" + (type==='lost'?'f3a6c8':'a7c7e7') + "/fff?text=" + encodeURIComponent(name)
+        image: "https://via.placeholder.com/280x150/" + 
+               (type === 'lost' ? 'f3a6c8' : 'a7c7e7') +
+               "/fff?text=" + encodeURIComponent(name)
     });
 
     displayItems(items);
