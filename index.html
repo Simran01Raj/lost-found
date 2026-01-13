@@ -4,164 +4,228 @@
     <title>Lost & Found - Campus Portal</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
         html, body { 
             height: 100vh !important; 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            /* BABY PINK PASTEL THEME */
-            background: linear-gradient(135deg, #ffb3d9 0%, #f8b8d1 50%, #ffd1e6 100%) !important;
+            /* PASTEL BLUE + PINK + WHITE THEME */
+            background: linear-gradient(135deg, #e6f2ff 0%, #fce7f3 50%, #ffffff 100%) !important;
             padding: 20px;
         }
+
         .container { max-width: 1200px; margin: auto; }
-        
-        /* PASTEL PINK HEADER */
+
+        /* HEADER */
         .header-box {
-            background: linear-gradient(135deg, rgba(255,179,217,0.98), rgba(255,209,230,0.98)) !important;
-            padding: 40px 20px; border-radius: 25px; margin-bottom: 40px;
-            box-shadow: 0 25px 50px rgba(255,179,217,0.4) !important; 
+            background: linear-gradient(135deg, rgba(230,242,255,0.98), rgba(252,231,243,0.98)) !important;
+            padding: 40px 20px;
+            border-radius: 25px;
+            margin-bottom: 40px;
+            box-shadow: 0 25px 50px rgba(173,216,230,0.4) !important;
             backdrop-filter: blur(15px);
             text-align: center;
         }
-        .header-box h1 { font-size: 2.8em; color: #ff1493 !important; margin-bottom: 10px; font-weight: 700; }
-        .header-box p { color: #ff69b4 !important; font-size: 1.2em; }
-        
+
+        .header-box h1 {
+            font-size: 2.8em;
+            color: #5fa8d3 !important;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header-box p {
+            color: #d16ba5 !important;
+            font-size: 1.2em;
+        }
+
         .section { 
-            background: rgba(255,255,255,0.98) !important; 
-            margin: 20px 0; padding: 30px; border-radius: 25px; 
-            box-shadow: 0 20px 40px rgba(255,179,217,0.3) !important;
+            background: rgba(255,255,255,0.98) !important;
+            margin: 20px 0;
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 20px 40px rgba(173,216,230,0.3) !important;
         }
-        .section h2, .items-section h2 { color: #ff1493 !important; text-align: center; margin-bottom: 20px; }
-        
+
+        .section h2, .items-section h2 {
+            color: #5fa8d3 !important;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
         input, textarea, select, button { 
-            width: 100%; margin: 10px 0; padding: 15px; border: 2px solid #ffd1e6 !important; 
-            border-radius: 15px; font-size: 16px; transition: all 0.3s;
-            background: #fff5fa !important;
+            width: 100%;
+            margin: 10px 0;
+            padding: 15px;
+            border: 2px solid #cfe7ff !important;
+            border-radius: 15px;
+            font-size: 16px;
+            transition: all 0.3s;
+            background: #f8fbff !important;
         }
+
         input:focus, textarea:focus, select:focus { 
-            outline: none; border-color: #ff69b4 !important; 
-            box-shadow: 0 0 0 4px rgba(255,105,180,0.3) !important;
+            outline: none;
+            border-color: #f3a6c8 !important;
+            box-shadow: 0 0 0 4px rgba(243,166,200,0.3) !important;
         }
+
         button { 
-            background: linear-gradient(135deg, #ff69b4 0%, #ffb3d9 100%) !important;
-            color: white !important; border: none; font-weight: 600; cursor: pointer; 
-            transition: all 0.3s; border-radius: 15px;
+            background: linear-gradient(135deg, #a7c7e7 0%, #f3a6c8 100%) !important;
+            color: white !important;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-radius: 15px;
         }
+
         button:hover { 
-            transform: translateY(-2px); 
-            box-shadow: 0 12px 30px rgba(255,105,180,0.5) !important; 
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(167,199,231,0.5) !important;
         }
-        
+
         #search { 
-            max-width: 500px; margin: 0 auto 20px; display: block;
-            border: 2px solid #ffd1e6 !important; border-radius: 30px; padding: 15px 25px;
-            background: #fff5fa !important; box-shadow: 0 8px 25px rgba(255,179,217,0.3) !important;
+            max-width: 500px;
+            margin: 0 auto 20px;
+            display: block;
+            border: 2px solid #cfe7ff !important;
+            border-radius: 30px;
+            padding: 15px 25px;
+            background: #f8fbff !important;
+            box-shadow: 0 8px 25px rgba(173,216,230,0.3) !important;
         }
-        
-        .items-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; margin-top: 20px; }
+
+        .items-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
         .card { 
-            background: linear-gradient(145deg, #fff5fa, #ffffff) !important; 
-            border-radius: 25px; padding: 25px; 
-            box-shadow: 0 15px 40px rgba(255,179,217,0.3) !important; 
-            transition: all 0.3s; border: 1px solid #ffeef5 !important;
+            background: linear-gradient(145deg, #f8fbff, #ffffff) !important;
+            border-radius: 25px;
+            padding: 25px;
+            box-shadow: 0 15px 40px rgba(173,216,230,0.3) !important;
+            transition: all 0.3s;
+            border: 1px solid #e6f2ff !important;
         }
-        .card:hover { transform: translateY(-8px); box-shadow: 0 30px 60px rgba(255,179,217,0.4) !important; }
-        .card img { width: 100%; height: 160px; object-fit: cover; border-radius: 15px; }
-        .lost { border-left: 6px solid #ff69b4 !important; }
-        .found { border-left: 6px solid #ffb3d9 !important; }
-        .claim-btn { width: 100%; margin-top: 15px; padding: 14px; border-radius: 15px; }
-        h3 { color: #ff1493 !important; margin-bottom: 10px; }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px rgba(173,216,230,0.4) !important;
+        }
+
+        .card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .lost { border-left: 6px solid #f3a6c8 !important; }
+        .found { border-left: 6px solid #a7c7e7 !important; }
+
+        .claim-btn {
+            width: 100%;
+            margin-top: 15px;
+            padding: 14px;
+            border-radius: 15px;
+        }
+
+        h3 {
+            color: #5fa8d3 !important;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
-<body>
-    <div class="container">
-        <div class="header-box">
-            <h1>🌸 Lost & Found Portal</h1>
-            <p>Report & recover campus items instantly</p>
-        </div>
-        
-        <div class="section">
-            <h2>📝 Report Item</h2>
-            <form id="reportForm">
-                <input type="text" id="itemName" placeholder="Item name (e.g., Black Keys, Blue Pen)" required>
-                <textarea id="description" placeholder="Description & location (e.g., Lost near Hostel A canteen)" required></textarea>
-                <select id="type">
-                    <option value="lost">❌ LOST</option>
-                    <option value="found">✅ FOUND</option>
-                </select>
-                <input type="file" id="photo" accept="image/*">
-                <button type="submit">🚀 Submit Report</button>
-            </form>
-        </div>
 
-        <div class="section items-section">
-            <h2>🔎 Search Items</h2>
-            <input type="text" id="search" placeholder="Search keys, laptop, water bottle...">
-            <div id="itemsList" class="items-grid"></div>
-        </div>
+<body>
+<div class="container">
+
+    <div class="header-box">
+        <h1>🎐 Lost & Found Portal</h1>
+        <p>Report & recover campus items instantly</p>
     </div>
 
-    <script>
+    <div class="section">
+        <h2>📝 Report Item</h2>
+        <form id="reportForm">
+            <input type="text" id="itemName" placeholder="Item name (e.g., Black Keys, Blue Pen)" required>
+            <textarea id="description" placeholder="Description & location" required></textarea>
+            <select id="type">
+                <option value="lost">❌ LOST</option>
+                <option value="found">✅ FOUND</option>
+            </select>
+            <input type="file" id="photo" accept="image/*">
+            <button type="submit">🚀 Submit Report</button>
+        </form>
+    </div>
+
+    <div class="section items-section">
+        <h2>🔎 Search Items</h2>
+        <input type="text" id="search" placeholder="Search keys, laptop, water bottle...">
+        <div id="itemsList" class="items-grid"></div>
+    </div>
+
+</div>
+
+<script>
 let items = [
-    {id:1, name:"Black Keys", desc:"Lost near Hostel A gate yesterday", type:"lost", image:"https://via.placeholder.com/280x150/ff69b4/fff?text=Keys"},
-    {id:2, name:"Blue Water Bottle", desc:"Found in Library 2nd floor", type:"found", image:"https://via.placeholder.com/280x150/ffb3d9/fff?text=Bottle"},
-    {id:3, name:"Sony Earphones", desc:"Lost in Canteen during lunch", type:"lost", image:"https://via.placeholder.com/280x150/ff69b4/fff?text=Earphones"},
-    {id:4, name:"ID Card", desc:"Found near Basketball Court", type:"found", image:"https://via.placeholder.com/280x150/ffb3d9/fff?text=ID+Card"}
+    {id:1, name:"Black Keys", desc:"Lost near Hostel A gate", type:"lost", image:"https://via.placeholder.com/280x150/f3a6c8/fff?text=Keys"},
+    {id:2, name:"Blue Water Bottle", desc:"Found in Library 2nd floor", type:"found", image:"https://via.placeholder.com/280x150/a7c7e7/fff?text=Bottle"},
+    {id:3, name:"Sony Earphones", desc:"Lost in Canteen", type:"lost", image:"https://via.placeholder.com/280x150/f3a6c8/fff?text=Earphones"},
+    {id:4, name:"ID Card", desc:"Found near Basketball Court", type:"found", image:"https://via.placeholder.com/280x150/a7c7e7/fff?text=ID+Card"}
 ];
 
-function displayItems(filteredItems) {
+function displayItems(listData) {
     const list = document.getElementById('itemsList');
-    list.innerHTML = filteredItems.map(item => `
+    list.innerHTML = listData.map(item => `
         <div class="card ${item.type}">
-            <img src="${item.image}" alt="${item.name}">
+            <img src="${item.image}">
             <h3>${item.name}</h3>
             <p>${item.desc}</p>
-            <span style="font-weight:bold; color:${item.type==='lost'?'#ff1493':'#ffb3d9'}">
+            <span style="font-weight:bold; color:${item.type==='lost'?'#f3a6c8':'#5fa8d3'}">
                 ${item.type==='lost'?'❌ LOST':'✅ FOUND'}
-            </span>
-            <br>
+            </span><br>
             <button class="claim-btn" data-id="${item.id}">👆 Claim Item</button>
         </div>
     `).join('');
 }
 
-document.getElementById('itemsList').addEventListener('click', function(e) {
-    if (e.target.classList.contains('claim-btn')) {
-        const itemId = e.target.getAttribute('data-id');
-        const item = items.find(i => i.id == itemId);
-        alert(`🎉 "${item.name}" CLAIMED! \n📞 Contact: +91-98765-43210 (Demo)\n📍 Location: ${item.desc}`);
+document.getElementById('itemsList').addEventListener('click', e => {
+    if(e.target.classList.contains('claim-btn')){
         e.target.textContent = '✅ Claimed!';
-        e.target.style.background = '#ffb3d9';
+        e.target.style.background = '#cfe7ff';
         e.target.disabled = true;
     }
 });
 
-document.getElementById('search').addEventListener('input', (e) => {
-    const query = e.target.value.toLowerCase();
-    const filtered = items.filter(item => 
-        item.name.toLowerCase().includes(query) || 
-        item.desc.toLowerCase().includes(query)
-    );
-    displayItems(filtered);
+document.getElementById('search').addEventListener('input', e => {
+    const q = e.target.value.toLowerCase();
+    displayItems(items.filter(i =>
+        i.name.toLowerCase().includes(q) || i.desc.toLowerCase().includes(q)
+    ));
 });
 
-document.getElementById('reportForm').addEventListener('submit', (e) => {
+document.getElementById('reportForm').addEventListener('submit', e => {
     e.preventDefault();
-    const name = document.getElementById('itemName').value;
-    const desc = document.getElementById('description').value;
+    const name = itemName.value;
+    const desc = description.value;
     const type = document.getElementById('type').value;
-    
-    const newItem = {
+
+    items.unshift({
         id: Date.now(),
         name, desc, type,
-        image: "https://via.placeholder.com/280x150/" + (type==='lost'?'ff69b4':'ffb3d9') + "/fff?text=" + encodeURIComponent(name)
-    };
-    
-    items.unshift(newItem);
+        image: "https://via.placeholder.com/280x150/" + (type==='lost'?'f3a6c8':'a7c7e7') + "/fff?text=" + encodeURIComponent(name)
+    });
+
     displayItems(items);
     e.target.reset();
-    alert('✅ Item reported successfully!');
+    alert("✅ Item reported successfully!");
 });
 
 displayItems(items);
-    </script>
+</script>
 </body>
 </html>
